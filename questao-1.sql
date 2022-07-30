@@ -1,0 +1,13 @@
+CREATE DATABASE bank;
+
+CREATE TABLE "states" (
+	"id" SERIAL PRIMARY KEY,
+	"name" TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE "cities" (
+	"id" SERIAL PRIMARY KEY,
+	"name" TEXT NOT NULL,
+	"stateId" INTEGER NOT NULL REFERENCES "states"("id")
+);
+
